@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from "./Header";
-import '../Style.css';
+import '../style.css';
 
 const Layout = (props) => {
     return (

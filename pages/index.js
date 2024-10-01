@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 
 import clientConfig from "../client-config";
 
-import Product from "../components/Products";
+import Product from "../components/Product";
 import fetch from 'isomorphic-unfetch';
 
 const Index = (props) => {

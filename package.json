@@ -9,7 +9,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
     "express": "^4.21.0",
     "isomorphic-unfetch": "^4.0.2",
     "next": "^14.2.12",

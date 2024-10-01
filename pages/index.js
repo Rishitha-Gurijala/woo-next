@@ -1,13 +1,31 @@
 import Layout from "../components/Layout";
 
-const Index = () => {
+import clientConfig from "../client-config";
+
+import Product from "../components/Products";
+import fetch from 'isomorphic-unfetch';
+
+const Index = (props) => {
+    const { products } = props;
     return (
-        <div>
-            <Layout>
-            Hello World!!
-            </Layout>
-        </div>
+        <Layout>
+            <div className = "product-container">
+                {
+                    products.length ? (
+                        products.map(product => <Product key={product.id} product={product} />)
+                    ) : ''}
+            </div>
+        </Layout>
     )
 };
+
+Index.getInitialProps = async () => {
+    const res = await fetch(`${clientConfig.siteUrl}/getProducts`);
+    const productsData = await res.json();
+    return {
+        products: productsData
+    }
+
+}
 
 export default Index;
